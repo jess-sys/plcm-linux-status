@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+test -c /dev/plcm_drv && echo "OK" || /etc/init.d/make_node_plcm start
+
 if [ "$#" -eq 1 ]; then
     /bin/plcm_message --message-line-1 $1
     echo $1
