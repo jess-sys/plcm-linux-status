@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+IP=`/sbin/ifconfig enp2s0 | grep "inet " | awk '{print $2}'`
+
+/bin/plcm_screen "System__Operational" "$IP"
